@@ -1,0 +1,4 @@
+#!/usr/bin/execlineb -P
+
+exec /usr/bin/php-fpm -c /etc/php5/php-fpm.ini --fpm-config /etc/php5/php-fpm.conf --pid /var/run/php-fpm.pid
+

@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv sh
+##
+# This script uses clever heredoc hack to substitute env variables into static config files
+# Source: http://stackoverflow.com/questions/2914220/bash-templating-how-to-build-configuration-files-from-templates-with-bash
+##
+
+echo "[cont-init.d] Substituting env into configuration files..."
+
+# Nginx doesn't support env variables in config files so we will have to do this in hacky way instead
+VARS='$PORT:$WEB_ROOT:$PHP_MAX_EXECUTION_TIME'
+envsubst "$VARS" < /etc/nginx/nginx.conf > /tmp/nginx.conf
+mv /tmp/nginx.conf /etc/nginx/nginx.conf
