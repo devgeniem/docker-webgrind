@@ -6,7 +6,7 @@ You can use this to analyze xdebug profiling.
 ## Example
 You need configure your xdebug to save its cachegrind files into `/tmp/xdebug` and then share that path with webgrind container.
 
-```
+```yaml
 ##
 # Web Server which runs nginx+php
 ##
@@ -31,7 +31,7 @@ webgrind:
 
 ## Configuration
 You can configure following enviromental variables:
-```
+```bash
 # Timezone
 TZ="Europe/Helsinki"
 
